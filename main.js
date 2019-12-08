@@ -15,21 +15,19 @@ let line = {
     yAxis: {
         max:100,
         title: {
-            text: 'Percent of Peak Value'
+            text: 'Percent of Peak Value (%)'
         }
     },
     xAxis: {
         tickInterval: 365*24*60*60*1000,
-        crosshair: {
-            color: 'red'
-        },
         type: 'datetime',
         labels: {
             format: '{value:%Y}'
         },
     },
-
-
+    tooltip: {
+        pointFormat: '{point.y:.1f}%'
+    },
     plotOptions: {
         series: {
             label: {
@@ -38,7 +36,7 @@ let line = {
             pointStart: 2010
         }
     },
-
+    colors: ['#F7931A', '#176BEF'],
     series: [],
 
     responsive: {
@@ -69,7 +67,7 @@ let bar = {
         borderWidth:5
     },
     title:{
-        text:'Gains vs Loss'
+        text:'Simulated Cryptocurrency Returns'
     },
     xAxis: {
         categories: ['Profit', 'Loss'],
@@ -133,7 +131,7 @@ let barBit = {
             }
         }
     },
-    colors: ['#0B6623', '#C21807'],
+    colors: ['#0B6623', '#F7931A'],
     series: [{
         name:'net',
         data:[10000,10000]
